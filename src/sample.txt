@@ -1,0 +1,7 @@
+=== PyFileX : environnement de test ===
+
+Répertoire courant : C:\Users\Rom\...
+Dossier de travail : C:\Users\Rom\...\PyFileX_Test
+Nom                : PyFileX_Test
+Existe              : True
+Est un dossier      : True
