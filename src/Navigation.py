@@ -8,7 +8,7 @@ class Navigation :
 
      # ==============================
      # INFORMATION
-    # ==============================
+        # ==============================
 
     def pwd(self):
         return self.fm.current_directory
@@ -28,10 +28,10 @@ class Navigation :
         return Path(path).is_absolute
 
 
-    """
-        Transforme un chemin relatif en chemin absolu
-        puis le résout.
-    """
+    # """
+    #     Transforme un chemin relatif en chemin absolu
+    #     puis le résout.
+    # """
     def resolve_path(self, path):
         path = Path(path)
 
@@ -72,9 +72,9 @@ class Navigation :
         return True
 
     def back(self):
-        """
-        Retourne au dossier parent.
-        """
+        # """
+        # Retourne au dossier parent.
+        # """
 
         current = self.fm.current_directory
         parent = current.parent
@@ -86,6 +86,7 @@ class Navigation :
 
         self.fm.current_directory = parent
         return True
+
 
     def go_home(self):
 
@@ -100,18 +101,16 @@ class Navigation :
     # CONTENU
     # ==========================================
     def ls(self):
-        """
-        Retourne le contenu du répertoire courant.
-        """
+        # """
+        # Retourne le contenu du répertoire courant.
+        # """
+        self.fm.list_directory()
 
-        return list(
-            self.fm.current_directory.iterdir()
-        )
 
     def tree(self, path=None, level=0):
-        """
-        Affiche récursivement l'arborescence.
-        """
+        # """
+        # Affiche récursivement l'arborescence.
+        # """
 
         if path is None:
             path = self.fm.current_directory

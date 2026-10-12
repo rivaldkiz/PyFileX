@@ -12,6 +12,8 @@ print("          PyFileX")
 print("================================")
 
 print("\nRépertoire courant :")
+file_manager.create_directory("PyFileXTest")
+navigation.cd("PyFileXTest")
 print(navigation.pwd())
 
 print("\nContenu :")
