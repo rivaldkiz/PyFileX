@@ -135,12 +135,13 @@ Target architecture:
 pyfilex/
 │
 ├── main.py
-├── file_manager.py
-├── navigation.py
-├── search.py
-├── organizer.py
-├── backup.py
-├── analyzer.py
+├── fileManager.py
+├── Navigation.py
+├── Search.py
+├── Organizer.py
+├── Backup.py
+├── Analyzer.py
+├── Monitor.py
 ├── commands.py
 ├── utils.py
 │

@@ -8,7 +8,7 @@ class Analyzer:
         self.file_manager = file_manager
 
     def get_size(self, path):
-        """Retourne la taille d'un fichier en octets."""
+        # """Retourne la taille d'un fichier en octets."""
         path = Path(path)
 
         if not path.is_file():
@@ -20,7 +20,7 @@ class Analyzer:
             return 0
 
     def format_size(self, size):
-        """Convertit les octets en unité lisible."""
+        # """Convertit les octets en unité lisible."""
         units = ["o", "Ko", "Mo", "Go", "To"]
 
         size = float(size)
@@ -31,7 +31,7 @@ class Analyzer:
             size /= 1024
 
     def scan_directory(self, recursive=False):
-        """Analyse le dossier courant."""
+        # """Analyse le dossier courant."""
         directory = self.file_manager.current_directory
 
         elements = (
@@ -55,24 +55,24 @@ class Analyzer:
         return files, directories
 
     def get_total_size(self, recursive=False):
-        """Calcule la taille totale des fichiers."""
+        # """Calcule la taille totale des fichiers."""
         files, _ = self.scan_directory(recursive)
 
         return sum(self.get_size(file) for file in files)
 
     def get_extension_stats(self, recursive=False):
-        """Compte les fichiers par extension."""
+        # """Compte les fichiers par extension."""
         files, _ = self.scan_directory(recursive)
         stats = {}
 
         for file in files:
-            extension = file.suffix.lower() or "Sans extension"
+            # extension = file.suffix.lower() or "Sans extension"
             stats[extension] = stats.get(extension, 0) + 1
 
         return stats
 
     def get_largest_files(self, limit=5, recursive=False):
-        """Retourne les fichiers les plus volumineux."""
+        # """Retourne les fichiers les plus volumineux."""
         files, _ = self.scan_directory(recursive)
 
         files_with_size = [
@@ -88,7 +88,7 @@ class Analyzer:
         return files_with_size[:max(0, limit)]
 
     def show_report(self, recursive=False):
-        """Affiche un rapport complet."""
+        # """Affiche un rapport complet."""
         files, directories = self.scan_directory(recursive)
         total_size = sum(self.get_size(file) for file in files)
 
